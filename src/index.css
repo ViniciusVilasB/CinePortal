@@ -1,3 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --cor-personalizada-verde: #032541;
+    --cor-personalizada-dourada: #1bb8d8;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--cor-personalizada-verde);
+}
+
+.active {
+    color: var(--cor-personalizada-dourada);
+}
+
+/* Animação do botão */
+
+.button-nav {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 2px;
+}
+
+.button-nav::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--cor-personalizada-dourada);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.button-nav:hover::after {
+    transform: translateX(0);
+}
+
+/* Fim da animação do botão */
+
+.main{
+    @apply min-h-screen flex items-center flex-col justify-evenly;
+}
