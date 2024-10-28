@@ -23,26 +23,17 @@ body {
     position: relative;
     overflow: hidden;
     padding-bottom: 2px;
+    transition: all 0.1s;
+    place-items: center;
 }
 
-.button-nav::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--cor-personalizada-dourada);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-}
-
-.button-nav:hover::after {
-    transform: translateX(0);
+.button-nav:hover {
+    scale: 1.2;
+    cursor: pointer;
 }
 
 /* Fim da animação do botão */
 
 .main{
-    @apply min-h-screen flex items-center flex-col justify-evenly;
+    @apply min-h-screen flex items-center flex-col;
 }
