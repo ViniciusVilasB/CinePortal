@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import {
     AiOutlineMenu,
     AiOutlineClose,
@@ -7,28 +7,7 @@ import {
 
 export default function Header(){ 
 
-    const [isScrolling, setIsScrolling] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-    const handleScroll = () => {
-        setIsScrolling(true);
-        
-        if (window.scrollTimeout) {
-            clearTimeout(window.scrollTimeout);
-        }
-
-        window.scrollTimeout = setTimeout(() => {
-            setIsScrolling(false);
-        }, 300);
-    };
-
-    useEffect(() => {
-        window.addEventListener("scroll", handleScroll);
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
-            clearTimeout(window.scrollTimeout);
-        };
-    }, []);
 
     const navItems = [
         { to: '/', label: 'Home'},
@@ -37,9 +16,8 @@ export default function Header(){
       ];
 
     return(
-        <header className={`flex w-full bg-minha-cor-1 text-white font-semibold justify-between items-center h-16 p-6 fixed
-            transition-all duration-200 ease-in-out
-            ${isScrolling & !isMenuOpen ? "backdrop-blur-sm bg-opacity-80" : "bg-minha-cor-1"}`}>
+        <header className="flex w-full bg-minha-cor-1 text-white font-semibold justify-between items-center h-16 p-6
+            transition-all duration-200 ease-in-out">
 
             <div className="flex items-center text-minha-cor-2 ">
                 <h1 className="text-3xl font-normal">CinePortal</h1>

@@ -15,7 +15,7 @@ export default function MovieCard({ id, title, poster_path }) {
                 <img 
                     src={`https://image.tmdb.org/t/p/w342${poster_path}`} 
                     alt={title} 
-                    className="w-[130px] h-[200px] mt-3 cursor-pointer transition ease-in-out duration-300" 
+                    className="w-[130px] h-[200px] mt-3 cursor-pointer transition ease-in-out duration-300 rounded-lg" 
                 />
             </Link>
             <div className="overflow-hidden max-w-[130px]">

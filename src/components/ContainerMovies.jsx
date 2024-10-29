@@ -5,8 +5,8 @@ export default function ContainerMovies({ titulo, children }) {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        // Duplica os filhos para o carrossel infinito
-        setItems([children, children]); // Adiciona os elementos duas vezes
+        // Duplica os elementos para o carrossel infinito
+        setItems([children, children]);
     }, [children]);
 
     const scrollLeft = () => {
